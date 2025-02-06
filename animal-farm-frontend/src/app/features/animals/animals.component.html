@@ -1,0 +1,41 @@
+<div class="animal-farm">
+  <div class="animals-row">
+    <div *ngFor="let animal of animals.slice(0, 4)" class="animal-card" >
+      <div class="animal-info" >
+
+        <div class="thank-you-container" *ngIf="isThanking[animal._id]">
+          <p class="thank-you-text">🙏 მადლობა, ნაპოლეონ! 🙏</p>
+        </div>
+
+        <img [src]="animal.imageUrl" alt="{{ animal.name }}" class="animal-image">
+        
+        <h3 class="animal-name">{{ animal.name }}</h3>
+
+      </div>
+
+      <button mat-raised-button color="primary" (click)="feedAnimal(animal._id, animal.name)">საკვების დაყრა</button>
+      <p class="thanks-counter">მადლობები: {{ animal.thanks }}</p>
+    </div>
+  </div>
+
+  <!-- Center Pig -->
+  <div class="pig-container">
+    <app-pig></app-pig>
+  </div>
+
+  <div class="animals-row">
+    <div *ngFor="let animal of animals.slice(4, 8)" class="animal-card">
+      <div class="animal-info">
+
+        <div class="thank-you-container" *ngIf="isThanking[animal._id]">
+          <p class="thank-you-text">🙏 მადლობა, ნაპოლეონ! 🙏</p>
+        </div>
+
+        <img [src]="animal.imageUrl" alt="{{ animal.name }}" class="animal-image">
+        <h3 class="animal-name">{{ animal.name }}</h3>
+      </div>
+      <button mat-raised-button color="primary" (click)="feedAnimal(animal._id, animal.name)">საკვების დაყრა</button>
+      <p class="thanks-counter">მადლობები: {{ animal.thanks }}</p>
+    </div>
+  </div>
+</div>

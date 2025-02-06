@@ -1,0 +1,15 @@
+<div class="pig-container">
+  <div class="pig-info">
+    <h3 class="pig-name">{{ pig?.name }}</h3>
+    <img
+      [src]="pig?.imageUrl"
+      alt="Pig"
+      class="pig-image"
+      (click)="togglePigState()"
+      [ngClass]="{ rotate: isRotated }"
+    />
+  </div>
+  <button mat-raised-button color="accent" (click)="toggleMusic()">
+    🎵 {{ isMusicPlaying ? 'მუსიკის გამორთვა' : 'მუსიკის ჩართვა' }}
+  </button>
+</div>
